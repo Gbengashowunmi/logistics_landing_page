@@ -179,7 +179,7 @@ button{
     .navigation{
         position: absolute;
         right: 0px;
-        height: 90vh ;
+        height: 100vh ;
         width: 65%;
         top: 0 ;
         background-color: rgb(255, 255, 255);
@@ -192,6 +192,7 @@ button{
         justify-content: flex-start;
         gap: 30px;
         align-items: flex-start;
+        z-index:1;
     }
     .features, .login{
         flex-direction: column;
