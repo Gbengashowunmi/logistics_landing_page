@@ -3,7 +3,7 @@ const lineA = document.getElementById("line1");
 const lineB = document.getElementById("line2");
 const lineC = document.getElementById("line3");
 const feat = document.querySelector(".feature");
-const ul = document.querySelector(".features");
+const ul = document.querySelector(".navigation");
 
 const company = document.querySelector(".company");
 const companyContent = document.querySelector(".company-content");
