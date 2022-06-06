@@ -25,6 +25,7 @@ header{
     padding-right: 30px;
 }
 h4{
+    width: fit-content;
     color: black;
     font-family: sans-serif;
     font-size: larger;
