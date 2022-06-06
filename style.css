@@ -179,7 +179,6 @@ button{
     }
     .navigation{
         position: absolute;
-        right: 0px;
         height: 100vh ;
         width: 65%;
         top: 0 ;
