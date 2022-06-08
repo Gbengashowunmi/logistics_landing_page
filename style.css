@@ -25,7 +25,6 @@ header{
     padding-right: 30px;
 }
 h4{
-    width: fit-content;
     color: black;
     font-family: sans-serif;
     font-size: larger;
@@ -40,6 +39,11 @@ h4{
 .features, .login{
     display: flex;
     list-style: none;
+    justify-content: space-between;
+    gap: 30px;
+}
+#features{
+    display: flex;
     justify-content: space-between;
     gap: 30px;
 }
@@ -62,20 +66,37 @@ ul.login li{
     padding: 4px;
 }
 
-.feat-content, .company-content {
-    display: none;
+/* #features{
+    background-color: red;
+    height: fit-content;
+} */
+/* edit this part later */
+.feat-content {
+    display: block;
     position: absolute;
+    height: 0;
+    overflow: hidden;
     width: 100px;
     background-color: white;
     border-radius: 6px;
     box-shadow: 4px 4px 5px grey;
-
 }
-.feat-content.remove, .company-content.remove {
+
+.company-content{
+    display: block;
+    position: absolute;
+    height: 0%;
+    overflow: hidden;
+    width: 100px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 4px 4px 5px grey;
+}
+/* .feat-content.remove, .company-content.remove {
     display: none;
     
 
-}
+} */
 
 a{
     text-decoration: none;
@@ -91,8 +112,13 @@ a:hover{
     color: white;
 }
 
-.feat-content.active, .company-content.active{
-    display: block;
+.feat-content.active{
+    height: 150px;
+    transition: 1s;
+}
+.company-content.active{
+    height: 120px;
+    transition: 1s;
 }
 
 main{
@@ -150,7 +176,7 @@ button{
     border-radius: 1px;
     
 }
-.overlay{
+/* .overlay{
     display: none;
     width: 100%;
     height: 100%;
@@ -158,12 +184,24 @@ button{
     top: 0%;
     background-color: rgba(2, 30, 2, 0.708);
     transition: 3s;
-}
+} */
+
+/* footer{
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    height: fit-content;
+    background-color: green;
+    color: white;
+    padding: 20px;
+    text-align: center;
+} */
 @media(max-width:580px){
     header{
         width: 100%;
         gap: 80%;
         padding: 10px;
+        box-shadow: 3px 4px 5px rgb(24, 75, 17);
     }
     h4{
         padding-left: 10px;
@@ -175,11 +213,11 @@ button{
         display: flex;
         flex-direction: column;
         gap: 4px;
-        z-index: 3;
+        z-index: 2;
     }
     .navigation{
         position: absolute;
-        right: 0px;
+        right: 0;
         height: 100vh ;
         width: 50%;
         top: 0;
@@ -190,21 +228,48 @@ button{
         padding-left: 20px;
         transform: translateX(100%);
         transition: 1s;
-        /* justify-content: flex-start; */
         gap: 30px;
         align-items: flex-start;
         z-index: 1;
+    }
+    #features{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    .feature{
+        height: 20px;
+        overflow: hidden;
+        transition: 1s;
+    }
+    .feature.active{
+        height: 140px;
+        transition: 1s;
+    }
+    .company{
+        height: 20px;
+        overflow: hidden;
+        transition: 1s;
+    }
+    .company.active{
+        height: 120px;
+        transition: 1s;
     }
     .features, .login{
         flex-direction: column;
         list-style: none;
     }
+    .login{
+        margin-bottom: 10px;
+    }
     .navigation.active{
         transform: translateX(0%);
         transition: 1s;
-        z-index: 2;
+        z-index: 1;
     }
     
+
     #line1.active{
         transform: translateY(8px) rotate(45deg);
         transition: .5s;
@@ -220,7 +285,6 @@ button{
        
     main{
         display: flex;
-        /* margin: 40px; */
         justify-content: space-around;
         position: relative;
     }
@@ -234,8 +298,18 @@ button{
         margin-top: 250px;
         position: absolute;
     }
-    .overlay.active{
+    .overlay{
         display: block;
-        transition: 3s;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        opacity: 0;
+        background-color: rgba(2, 30, 2, 0.708);
+        transition:  1s;
+    }
+    .overlay.active{
+        opacity: 1;
+        transition: 1s;
     }
 }
